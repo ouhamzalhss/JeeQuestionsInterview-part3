@@ -30,7 +30,9 @@
 
 - 8 .	Cycle de vie dune entité JPA : New, Managed, Detached, Removed.
 
-- 9 .	Les niveaux de cache JPA : L1 (activé par défaut), L2 (cache hibernate) parmi les implémentations on trouve ehcache.
+- 9 .	Les niveaux de cache JPA : 
+  *  L1 est activé par défaut, et réside dans l'objet de session d'hibernation. 
+  *  L2 (cache hibernate) Ceci n'est pas activé par défaut. Il doit être configuré explicitement, Le cache de deuxième niveau réside dans l'objet SessionFactory et de ce fait, les données sont accessibles par l'ensemble de l'application. parmi les implémentations on trouve ehcache (Easy Hibernate cache).
 
 - 10 .	Transaction : Traiter un ensemble d’opérations come une seule pour avoir des données cohérentes,
 
