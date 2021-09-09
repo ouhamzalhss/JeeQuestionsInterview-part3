@@ -38,3 +38,17 @@
 Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
   *  Load() : lève une exception.
   *  Get() : renvoie null
+
+- 12 .	Qu'est-ce qu'une session Hibernate ?
+Une session est un objet qui maintient la connexion entre l'application objet Java et la base de données. Session a également des méthodes pour manipuler les données de la base de données à l'aide de méthodes telles que persist(), load(), get(), update(), delete(), etc.
+
+- 13 .	Qu'est-ce qu'une SessionFactory ?
+Est une classe qui permet de créer une instance de Session en fonction des paramètres de configuration afin d'établir la connexion à la base de données.
+Comme bonne pratique, l'application a généralement une seule instance de SessionFactory. 
+
+- 14 . la différence entre les méthodes getCurrentSession et openSession ?
+  *  getCurrentSession()	: Cette méthode renvoie la session liée au contexte. Cet objet de session est fermé une fois la session factory fermée.
+  *  openSession() : Cette méthode ouvre toujours une nouvelle session.C'est le développeur qui va fermer cet objet une fois toutes les opérations de base de données terminées.
+
+- 15 . Qu'est-ce que HQL ?
+Hibernate Query Language (HQL) est utilisé comme une extension de SQL. Il est très simple, efficace et très flexible pour effectuer des opérations complexes sur des bases de données relationnelles sans écrire de requêtes compliquées. HQL est la représentation orientée objet du langage de requête, c'est-à-dire qu'au lieu d'utiliser le nom de la table, nous utilisons le nom de la classe qui rend ce langage indépendant de toute base de données.
