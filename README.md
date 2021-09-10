@@ -34,7 +34,7 @@ Hibernate Query Language (HQL) est utilisé comme une extension de SQL. HQL est 
 
 - 11 .	Quelle est la différence entre load() et get()?
 Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
-  *  load() : lève une exception.
+  *  load() : lève une exception (ObjectNotFoundException).
   *  get() : renvoie null.
   
 - 12 .	Différentes stratégies de Mapping d’héritage : @Inheritance(strategy= SINGLE_TABLE)
