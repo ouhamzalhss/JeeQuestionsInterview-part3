@@ -43,7 +43,7 @@ Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
   *  Une table pour chaque classe concrète : TABLE_PER_CLASS
   *  Une table pour la classe parente et une table pour chaque classe fille: JOINED_TABLE
 
-- 12 .	Default fetch : JPA 2.0 +
+- 12 .	le fetch par défaut : JPA 2.0 +
   *  OneToMany: LAZY
   *  ManyToMany: LAZY
   *  ManyToOne: EAGER
@@ -65,4 +65,6 @@ Est une classe qui permet de créer une instance de Session, afin d'établir la 
   *  getCurrentSession()	: Cette méthode renvoie la session liée au contexte. Cet objet de session est fermé une fois la SessionFactory est fermée.
   *  openSession() : Cette méthode ouvre toujours une nouvelle session. C'est le développeur qui va fermer cet objet une fois toutes les opérations de base de données terminées.
 
+- 18 . Qu'est-ce qu'un Entitymanager ?
+EntityManager est une API qui gère le cycle de vie des instances d'entité.
 
