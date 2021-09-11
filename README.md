@@ -31,26 +31,29 @@ Hibernate Query Language (HQL) est utilisé comme une extension de SQL. HQL est 
   *  Persistent, [save(), persist(), saveOrUpdate(), merge(), load(), get() ]
   *  Detached, [session.close(), session.clear(), session.evict(obj)]
 
-- 10 . Quelle est la différence entre persist, save, merge and update? 
-  *  Vous pouvez utiliser les méthodes persist, save pour stocker une nouvelle entité (Transient) dans la base de données.
-  *  Et merge, update pour enregistrer les modifications d'une entité détachée (detached, Removed) dans la base de données.
+- 10 . Quelle est la différence entre persist(), save(), merge() and update() ? 
+  *  Vous pouvez utiliser les méthodes persist(), save() pour stocker une nouvelle entité (Transient) dans la base de données.
+  *  Et merge(), update() pour enregistrer les modifications d'une entité détachée (Detached) dans la base de données.
 
 - 11 .	Quelle est la différence entre load() et get()?
 Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
-  *  load() : lève une exception (ObjectNotFoundException).
-  *  get() : renvoie null.
+  *  load() : lève une exception (ObjectNotFoundException). la méthode load() peut retourner un proxy (lazy loading)
+  *  get() : renvoie null. renvoie jamais de proxy, elle atteint toujours la base de données.
   
-- 12 .	Différentes stratégies de Mapping d’héritage : @Inheritance(strategy= SINGLE_TABLE)
-  *  Une table par hiérarchie : SINGLE_TABLE  (plus utilisé) 
- 		 @DiscriminatorColumn ajouter cette annotation dans la class mere, et @DiscriminatorValue dans les class filles.
+- 12 .	Différentes stratégies de Mapping d’héritage : @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+  *  Une table par la hiérarchie : SINGLE_TABLE  (le plus utilisé) 
+ 		 @DiscriminatorColumn: Ajoutez cette annotation dans la classe mère, et @DiscriminatorValue dans les classes filles.
   *  Une table pour chaque classe concrète : TABLE_PER_CLASS
-  *  Une table pour la classe parente et une table pour chaque classe fille: JOINED_TABLE
+  *  Une table pour la classe mère et une table pour chaque classe fille: JOINED_TABLE
 
 - 13 .	le fetch par défaut : JPA 2.0 +
   *  @OneToMany: LAZY
   *  @ManyToMany: LAZY
   *  @ManyToOne: EAGER
   *  @OneToOne: EAGER
+
+FetchType.LAZY : indique que la relation doit être chargée à la demande ;
+FetchType.EAGER : indique que la relation doit être chargée en même temps que l'entité qui la porte.
 
 - 14 .	Les niveaux de cache JPA : 
   *  L1 est activé par défaut, et réside dans l'objet de session d'hibernation. 
