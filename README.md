@@ -28,8 +28,8 @@ Hibernate Query Language (HQL) est utilisé comme une extension de SQL. HQL est 
   
 - 9 .	Cycle de vie d'une entité JPA : 
   *  Transient, [new()]
-  *  Persistent, [save(), persist(), saveOrUpdate(), load(), get() ]
-  *  Detached, [update(), merge(), saveOrUpdate()]
+  *  Persistent, [save(), persist(), saveOrUpdate(), merge(), load(), get() ]
+  *  Detached, [session.close(), session.evict(), session.clear()]
 
 - 10 . Quelle est la différence entre persist, save, merge and update? 
   *  Vous pouvez utiliser les méthodes persist, save pour stocker une nouvelle entité (Transient) dans la base de données.
