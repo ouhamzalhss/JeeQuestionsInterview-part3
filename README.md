@@ -2,7 +2,7 @@
 
 #### Partie 4: Persistence de données ( JDBC, JPA, Hibernate, Spring data)
 
-- 1 . JDBC (Java DataBase Connectivity) est une API fournie avec Java permettant de se connecter à des bases de données, c'est un ensemble de classes permettant de développer des applications capables de se connecter à des serveurs de bases de données (SGBD).
+- 1 . JDBC (Java DataBase Connectivity) est une API fournie avec Java permettant de développer des applications capables de se connecter à des bases de données (SGBD).
 
 - 2 .	JPA : Java persistence Api : C’est une spécification pour le mapping objet relationnel ORM, vient pour standariser différents framework ORM comme Hibernate, ExlepseLink.
 
