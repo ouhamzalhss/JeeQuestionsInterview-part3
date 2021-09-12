@@ -41,12 +41,12 @@ Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
   *  get() : renvoie null. renvoie jamais de proxy, elle atteint toujours la base de données.
   
 - 12 .	Différentes stratégies de Mapping d’héritage : @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
-  *  Une table par la hiérarchie : SINGLE_TABLE  (le plus utilisé) 
+  *  Une table par la hiérarchie : SINGLE_TABLE  (la plus utilisée) 
  		 @DiscriminatorColumn: Ajoutez cette annotation dans la classe mère, et @DiscriminatorValue dans les classes filles.
   *  Une table pour chaque classe concrète : TABLE_PER_CLASS
   *  Une table pour la classe mère et une table pour chaque classe fille: JOINED_TABLE
 
-- 13 .	le fetch par défaut : JPA 2.0 +
+- 13 .	Les relations avec JPA et le fetch par défaut (JPA2+) :
   *  @OneToMany: LAZY
   *  @ManyToMany: LAZY
   *  @ManyToOne: EAGER
@@ -59,7 +59,7 @@ FetchType.EAGER : indique que la relation doit être chargée en même temps que
   *  L1 est activé par défaut, et réside dans l'objet de session d'hibernation. 
   *  L2 (cache hibernate) Ceci n'est pas activé par défaut. Il doit être configuré explicitement, et réside dans l'objet SessionFactory et de ce fait, les données sont accessibles par l'ensemble de l'application. parmi les implémentations on trouve ehcache (Easy Hibernate cache).
 
-- 15 .	Transaction : Traiter un ensemble d’opérations comme une seule pour avoir des données cohérentes,
+- 15 .	Transaction : Traiter un ensemble d’opérations comme une seule pour avoir des données cohérentes, pour gérer les transactions on utlise JTA (Java Transaction API),
 
 - 16 .	Qu'est-ce qu'une session Hibernate ?
 Une session est un objet qui maintient la connexion entre l'application objet Java et la base de données. Session a également des méthodes pour manipuler les données de la base de données à l'aide de méthodes telles que persist(), load(), get(), update(), delete(), etc.
@@ -72,7 +72,13 @@ Est une classe qui permet de créer une instance de Session, afin d'établir la 
   *  openSession() : Cette méthode ouvre toujours une nouvelle session. C'est le développeur qui va fermer cet objet une fois toutes les opérations de base de données terminées.
 
 - 19 . Qu'est-ce qu'un Entitymanager ?
-EntityManager est une API qui gère le cycle de vie des instances d'entité.
+EntityManager est une API qui gère le cycle de vie des instances d'entité JPA.
 
-- 20 . Quelle est la différence entre JPA et JDO ?
-JPA et Java Data Objects (JDO) sont deux spécifications permettant de stocker des objets Java dans des bases de données. Si JPA se concentre uniquement sur les bases de données relationnelles, alors JDO est une spécification plus générale qui décrit l'ORM pour toutes les bases et référentiels possibles.
+- 20 . Les requêtes JPA :
+  *  requêtes Natives.      entityManager.createNativeQuery(...)
+  *  Requêtes JPQL.         entityManager.createQuery(...)
+  *  l'API Criteria         entityManager.getCriteriaBuilder().createQuery(...) 
+
+- 21 . Quelle est la différence entre JPA et JDO ?
+  *  JPA (Java Persistence API) se concentre uniquement sur les bases de données relationnelles, 
+  *  Alors JDO (Java Data Objects) est une spécification plus générale qui décrit l'ORM pour toutes les bases et référentiels possibles.
