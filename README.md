@@ -47,6 +47,7 @@ Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
   *  Une table pour la classe mère et une table pour chaque classe fille: JOINED_TABLE
 
 - 13 .	Les relations avec JPA et le fetch par défaut (JPA2+) :
+
 Relation | fetch par defaut
 --- | --- 
 @OneToMany | LAZY
