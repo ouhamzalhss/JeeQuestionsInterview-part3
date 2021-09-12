@@ -47,10 +47,12 @@ Lorsque l'objet n'est disponible ni dans le cache ni dans la base de données,
   *  Une table pour la classe mère et une table pour chaque classe fille: JOINED_TABLE
 
 - 13 .	Les relations avec JPA et le fetch par défaut (JPA2+) :
-  *  @OneToMany: LAZY
-  *  @ManyToMany: LAZY
-  *  @ManyToOne: EAGER
-  *  @OneToOne: EAGER
+Relation | fetch par defaut
+--- | --- 
+@OneToMany | LAZY
+@ManyToMany | LAZY
+@ManyToOne | EAGER
+@OneToOne | EAGER
 
 FetchType.LAZY : indique que la relation doit être chargée à la demande ;
 FetchType.EAGER : indique que la relation doit être chargée en même temps que l'entité qui la porte.
