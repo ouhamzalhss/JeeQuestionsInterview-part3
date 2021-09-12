@@ -55,8 +55,8 @@ Relation | fetch par defaut
 @ManyToOne | EAGER
 @OneToOne | EAGER
 
-FetchType.LAZY : indique que la relation doit être chargée à la demande ;
-FetchType.EAGER : indique que la relation doit être chargée en même temps que l'entité qui la porte.
+  *  FetchType.LAZY : indique que la relation doit être chargée à la demande ;
+  *  FetchType.EAGER : indique que la relation doit être chargée en même temps que l'entité qui la porte.
 
 - 14 .	Les niveaux de cache JPA : 
   *  L1 est activé par défaut, et réside dans l'objet de session d'hibernation. 
